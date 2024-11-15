@@ -1,0 +1,13 @@
+cookies.css
+
+body{
+background-color: brown;
+}
+header {
+    text-align: center;
+}
+footer p {
+	text-align: center;
+	color: blue;
+	padding: 1em 0;
+}

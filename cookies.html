@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>COOKIES Project</title>
+	<link rel="shortcut icon" href="mylogo.ico">
+	<link rel="stylesheet" href="cookies.css">
+</head>
+	<script>
+		function setCookie(cname,cvalue,exdays) {
+  			const d = new Date();
+  			d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  			let expires = "expires=" + d.toUTCString();
+  			document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+
+		function getCookie(cname) {
+  			let name = cname + "=";
+  			let decodedCookie = decodeURIComponent(document.cookie);
+  			let ca = decodedCookie.split(';');
+  		for(let i = 0; i < ca.length; i++) {
+    			let c = ca[i];
+    			while (c.charAt(0) == ' ') {
+      			c = c.substring(1);
+    		}
+    		if (c.indexOf(name) == 0) {
+      			return c.substring(name.length, c.length);
+    		}
+  		}
+  		return "";
+		}
+
+		function checkCookie() {
+  			let user = getCookie("username");
+  			if (user != "") {
+    			alert("Welcome again " + user);
+  			} else {
+     			user = prompt("Please enter your name:","");
+     			if (user != "" && user != null) {
+      			 setCookie("username", user, 30);
+     			}
+  			}
+		}
+</script>
+
+<body>
+
+<body onload="checkCookie()"></body>
+	<header>
+		<h1>The use of Cookies</h1>
+		<img src="Cookies.jfif" alt="Cookie Logo" heiight="80">
+	</header>
+	
+	<h3> This is a basically example of how we can and should properly use cookies in a website</h3>
+
+
+
+
+
+
+
+
+
+
+<footer>
+		<p>&copy Mike Felix 2024, New Jersey, Preserved Rights, Smile for a while</p>
+</footer>
+</body>
+</html>
